@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="dynamic-title">Detalles del Auto</title>
+    <link rel="icon" href="./img/logos.png" type="webp">
+    <link rel="stylesheet" href="../dist/css/output.css">
+    <link rel="stylesheet" href="./css/input.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+</head>
+
+<body class="bg-white font-montserrat">
+    
+    <nav class="fixed top-0 left-0 w-full z-50 bg-black bg-opacity-80 backdrop-blur-md font-['oswald']">
+        <div class="container mx-auto px-4 sm:px-6 py-3 sm:py-4 flex justify-between items-center">
+            <a href="index.html" class="text-primary font-['oswald'] text-2xl sm:text-3xl">Flytransfersmx</a>
+            <div class="hidden lg:flex items-center space-x-4 sm:space-x-8">
+                <a href="index.html#inicio"
+                    class="nav-link text-white hover:text-primary transition-colors duration-300">Inicio</a>
+                <a href="index.html#servicios"
+                    class="nav-link text-white hover:text-primary transition-colors duration-300">Servicios</a>
+                <a href="index.html#vehiculos"
+                    class="nav-link text-white hover:text-primary transition-colors duration-300">Vehículos</a>
+                <a href="index.html#reserva"
+                    class="nav-link text-white hover:text-primary transition-colors duration-300">Reserva</a>
+                <a href="index.html#contacto"
+                    class="nav-link text-white hover:text-primary transition-colors duration-300">Contacto</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button
+                    class="hidden md:block border border-primary text-primary hover:bg-primary hover:text-black transition-colors duration-300 px-4 py-2 !rounded-button whitespace-nowrap">Iniciar
+                    Sesión</button>
+                <button class="md:hidden w-10 h-10 flex items-center justify-center text-white" id="mobile-menu-button">
+                    <i class="ri-menu-line ri-lg"></i>
+                </button>
+            </div>
+        </div>
+        <div class="md:hidden hidden bg-black bg-opacity-95 w-full" id="mobile-menu">
+            <div class="container mx-auto px-6 py-4 flex flex-col space-y-4">
+                <a href="index.html#inicio"
+                    class="text-white hover:text-primary transition-colors duration-300 py-2">Inicio</a>
+                <a href="index.html#servicios"
+                    class="text-white hover:text-primary transition-colors duration-300 py-2">Servicios</a>
+                <a href="index.html#vehiculos"
+                    class="text-white hover:text-primary transition-colors duration-300 py-2">Vehículos</a>
+                <a href="index.html#reserva"
+                    class="text-white hover:text-primary transition-colors duration-300 py-2">Reserva</a>
+                <a href="index.html#contacto"
+                    class="text-white hover:text-primary transition-colors duration-300 py-2">Contacto</a>
+                <button
+                    class="border border-primary text-primary hover:bg-primary hover:text-black transition-colors duration-300 px-4 py-2 !rounded-button whitespace-nowrap w-full">Iniciar
+                    Sesión</button>
+            </div>
+        </div>
+    </nav>
+    <div class="bg-gray-50 pt-24 pb-4">
+        <div class="container mx-auto px-6">
+            <div class="flex items-center text-sm text-gray-600">
+                <a href="index.html" class="hover:text-primary transition-colors duration-300">Inicio</a>
+                <span class="mx-2">/</span>
+                <a href="index.html#vehiculos" class="hover:text-primary transition-colors duration-300">Vehículos</a>
+                <span class="mx-2">/</span>
+                <span class="text-primary" id="subtitulo"></span>
+            </div>
+        </div>
+    </div>
+    <div class="bg-gray-50 py-6">
+        <div class="container mx-auto px-6">
+            <div class="flex justify-between items-center">
+                <h1 class="text-3xl sm:text-4xl font-bold text-black">Reserva de Vehículo</h1>
+                <div class="hidden md:flex items-center">
+                    <div class="flex items-center">
+                        <div
+                            class="w-8 h-8 rounded-full flex items-center justify-center bg-primary text-black font-semibold step-indicator active">
+                            1</div>
+                        <div class="w-16 h-1 bg-primary step-line active"></div>
+                        <div
+                            class="w-8 h-8 rounded-full flex items-center justify-center bg-gray-300 text-gray-700 font-semibold step-indicator">
+                            2</div>
+                        <div class="w-16 h-1 bg-gray-300 step-line"></div>
+                        <div
+                            class="w-8 h-8 rounded-full flex items-center justify-center bg-gray-300 text-gray-700 font-semibold step-indicator">
+                            3</div>
+                    </div>
+                    <div class="ml-4 text-sm text-gray-600">
+                        <span class="font-semibold text-primary">Detalles</span> / Pago / Confirmación
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="py-12">
+        <div class="container mx-auto px-6 py-8 lg:grid lg:grid-cols-3 lg:gap-6">
+            <div class="lg:col-span-2">
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden mb-8">
+                    <div class="max-w-5xl mx-auto p-4 bg-white rounded-2xl shadow-xl">
+                        <div
+                            class="relative aspect-video rounded-xl overflow-hidden shadow-md mb-4 border border-gray-200">
+                            <img id="main-image" alt="Imagen del vehículo"
+                                class="w-full h-full object-cover transition-all duration-500 hover:scale-105">
+                            <div class="absolute top-4 right-4 bg-dorada text-white px-4 py-1 text-sm rounded-full font-semibold shadow-md"
+                                id="car-badge">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-6 ">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h2 class="text-2xl font-bold text-black mb-2" id="titulo"></h2>
+                                <div class="flex items-center text-sm text-gray-600 mb-4">
+                                    <div class="flex items-center mr-4">
+                                        <i class="ri-user-line mr-1"></i>
+                                        <span id="pasajeros"></span>
+                                    </div>
+                                    <div class="flex items-center mr-4">
+                                        <i class="ri-suitcase-2-line mr-1"></i>
+                                        <span id="equipaje"></span>
+                                    </div>
+                                    <div class="flex items-center" id="wifi-feature" style="display: none;">
+                                        <i class="ri-wifi-line mr-1"></i>
+                                        <span>Wi-Fi gratis</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-center" id="rating-section" style="display: none;">
+                                    <div class="text-primary">
+                                        <i class="ri-star-fill"></i>
+                                        <i class="ri-star-fill"></i>
+                                        <i class="ri-star-fill"></i>
+                                        <i class="ri-star-fill"></i>
+                                        <i class="ri-star-fill"></i>
+                                    </div>
+                                    <span class="ml-2 text-gray-600" id="rating-value">(0 valoraciones)</span>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-gray-500 line-through" id="old-price" style="display: none;"></div>
+                                <div class="text-2xl font-bold text-black" id="billete"></div>
+                                <div class="text-sm text-gray-600">por día</div>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 mb-6" id="descripcion"></p>
+                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-6" id="features-grid">
+                        </div>
+                        <div class="border-t border-gray-200 pt-6" id="additional-features-section"
+                            style="display: none;">
+                            <h3 class="text-lg font-semibold text-black mb-4">Características Adicionales</h3>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3" id="additional-features-list">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden sticky top-24">
+                <div class="p-6">
+                    <h2 class="text-xl font-bold text-black mb-6">Detalles de la Reserva</h2>
+                    <form class="space-y-4">
+                        <div>
+                            <label for="Name" class="block text-gray-700 mb-2">Ingrese su nombre completo</label>
+                            <input type="text" id="Name"
+                                class="w-full px-4 py-3 border bg-slate-50 border-gray-300 rounded-md form-input focus:outline-none focus:ring-2 focus:ring-primary"
+                                placeholder="Nombre Completo">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-gray-700 mb-2">Ingrese su Correo</label>
+                            <input type="email" id="email"
+                                class="w-full px-4 py-3 border bg-slate-50 border-gray-300 rounded-md form-input focus:outline-none focus:ring-2 focus:ring-primary"
+                                placeholder="Flytransfersmx@gmail.com">
+                        </div>
+
+
+                        <div>
+                            <label for="fecha" class="block text-gray-700 mb-2">Fecha de Recogida</label>
+                            <input type="date" id="fecha"
+                                class="w-full px-4 py-3 border bg-slate-50 border-gray-300 rounded-md form-input focus:outline-none focus:ring-2 focus:ring-primary"
+                                min="2025-05-21">
+                        </div>
+                        <div>
+                            <label for="hora" class="block text-gray-700 mb-2">Hora de Recogida</label>
+                            <input type="time" id="hora"
+                                class="w-full px-4 py-3 border bg-slate-50 border-gray-300 rounded-md form-input focus:outline-none focus:ring-2 focus:ring-primary">
+                        </div>
+
+                        <div>
+                            <label for="origen" class="block text-gray-700 mb-2">Dirección de Recogida</label>
+                            <div class="relative">
+                                <div class="absolute left-3 top-1/2 transform -translate-y-1/2 pointer-events-none">
+                                    <i class="ri-map-pin-line text-primary text-lg"></i>
+                                </div>
+
+                                <select id="origen"
+                                    class="w-full  rounded-md  pl-10 pr-8 py-3 border border-gray-300  bg-slate-50 form-input focus:outline-none focus:ring-2 focus:ring-primary">
+                                    <option value="Terminal 1">Terminal 1</option>
+                                    <option value="Termina 2">Termina 2</option>
+                                    <option value="Terminal 3">Terminal 3</option>
+                                    <option value="Terminal 4" selected>Terminal 4</option>
+                                </select>
+                            </div>
+
+                        </div>
+                        <div>
+                            <label for="destino" class="block text-gray-700 mb-2">Dirección de Destino</label>
+                            <div class="relative">
+                                <div class="absolute left-3 top-1/2 transform -translate-y-1/2 pointer-events-none">
+                                    <i class="ri-map-pin-line text-primary text-lg"></i>
+                                </div>
+
+                                <select id="origen"
+                                    class="w-full  rounded-md  pl-10 pr-8 py-3 border border-gray-300  bg-slate-50 form-input focus:outline-none focus:ring-2 focus:ring-primary">
+                                    <option value="">Selecciona un hotel</option>
+                                    <option value="riu-cancun">Hotel Riu Cancún</option>
+                                    <option value="casa-blanca">Hotel Casa Blanca Boutique</option>
+                                    <option value="ocean-dreams">Ocean Dreams Cancún</option>
+                                    <option value="selina">Selina Cancún Laguna</option>
+                                    <option value="city-express">City Express Cancún</option>
+                                    <option value="krystal">Krystal Cancún</option>
+                                    <option value="maya-fair">MayaFair Design Hotel</option>
+                                    <option value="one-cancun">One Cancún Centro</option>
+                                    <option value="hotel-xbalamque">Hotel Xbalamqué</option>
+                                    <option value="oh-cancun">Cancún The Urban Oasis</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+
+                        <div>
+                            <label for="currency-selector" class="block text-gray-700 mb-2">Seleccionar
+                                Divisa</label>
+                            <select id="currency-selector"
+                                class="w-full px-4 py-3 border bg-slate-50  border-gray-300 rounded form-input focus:outline-none pr-8">
+                                <option value="USD">USD</option>
+                                <option value="MXN">MXN</option>
+                            </select>
+                        </div>
+
+                       
+                        <button type="button" id="continuar-pago"
+                            class="w-full bg-primary text-black font-semibold py-3 !rounded-button cta-button whitespace-nowrap mt-6">
+                            Continuar al Pago
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="bg-black/90 text-white font-playfair text-sm">
+  <div class="max-w-screen-xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
+    <div class="flex flex-col md:flex-row md:justify-between md:space-x-12 space-y-10 md:space-y-0">
+      
+      <div class="flex-1">
+        <a href="index.html" class="text-primary font-['Oswald'] text-2xl font-bold mb-2 inline-block">
+          flytransfermx
+        </a>
+        <p class="text-gray-400 mt-2 leading-snug text-justify">
+          Reserva tu taxi en Cancún con confianza. Servicio puntual y de lujo las 24 horas.
+        </p>
+        <div class="flex space-x-3 mt-4">
+          <a href="#" class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-800 hover:bg-primary hover:text-black transition">
+            <i class="ri-facebook-fill text-lg"></i>
+          </a>
+          <a href="#" class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-800 hover:bg-primary hover:text-black transition">
+            <i class="ri-whatsapp-fill text-lg"></i>
+          </a>
+          <a href="#" class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-800 hover:bg-primary hover:text-black transition">
+            <i class="ri-instagram-fill text-lg"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="flex-1">
+        <h3 class="text-primary text-base font-semibold mb-3">Enlaces Rápidos</h3>
+        <ul class="space-y-2">
+          <li><a href="#" class="hover:text-primary transition">Inicio</a></li>
+          <li><a href="#" class="hover:text-primary transition">Servicios</a></li>
+          <li><a href="#" class="hover:text-primary transition">Reservaciones</a></li>
+          <li><a href="#" class="hover:text-primary transition">Contacto</a></li>
+        </ul>
+      </div>
+
+      <div class="flex-1">
+        <h3 class="text-primary text-base font-semibold mb-3">Contacto</h3>
+        <ul class="space-y-2">
+          <li class="flex items-start">
+            <i class="ri-map-pin-line text-primary mr-2"></i>
+            <span>Centro de Cancún</span>
+          </li>
+          <li class="flex items-start">
+            <i class="ri-phone-line text-primary mr-2"></i>
+            <a href="tel:+529983253731" class="hover:text-primary transition">+52 998 325 3731</a>
+          </li>
+          <li class="flex items-start">
+            <i class="ri-mail-line text-primary mr-2"></i>
+            <a href="mailto:flytransfermx@gmail.com" class="hover:text-primary transition">flytransfermx@gmail.com</a>
+          </li>
+          <li class="flex items-start">
+            <i class="ri-time-line text-primary mr-2"></i>
+            <span>Disponible 24/7</span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="mt-6 border-t border-gray-700 pt-4 text-center text-xs text-gray-500">
+      © 2025 flytransfermx. Todos los derechos reservados.
+    </div>
+  </div>
+</footer>
+
+    <script src="./js/core-view.js"></script>
+    <script src="./js/menuxiones.js"></script>
+</body>
+
+</html>
