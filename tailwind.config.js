@@ -2,7 +2,7 @@
 const daisyui = require("daisyui");
 
 module.exports = {
-  content: ['./public/**/*.{html,js}'],
+  content: ['./public/**/*.{html,js}', './src/**/*.{html,js}'],
   theme: {
     container: {
       center: true,
@@ -15,16 +15,15 @@ module.exports = {
         '2xl': '1400px',
       },
     },
-
     extend: {
       colors: {
         primary: "#D4AF37",
         secondary: "#000000",
+        tryary: "#0F111A", 
         arena: "#FFF9F0",
         dorada: "#D4AF37",
         marino: "#1A1A2E",
-        900: '#1A1A2E',
-        negro: "#121212",
+        '900': '#1A1A2E', 
         sombra: "#2C3E50",
       },
       borderRadius: {
@@ -50,5 +49,5 @@ module.exports = {
       },
     },
   },
-  plugins: [daisyui],
-}
+  plugins: [require("daisyui"), require("flowbite/plugin")],
+};
